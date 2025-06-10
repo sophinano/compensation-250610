@@ -82,17 +82,13 @@ private String address;
 
         */
 
-        /** Example 2:  finding and process
-        
+        repository().findById(outOfStock.getOrderId()).ifPresent(order ->{
+                    
+                    order.setStatus("OrderCancelled");
+                    repository().save(order);
+                });
 
-        repository().findById(outOfStock.get???()).ifPresent(order->{
-            
-            order // do something
-            repository().save(order);
-
-
-         });
-        */
+            }
 
         
     }
